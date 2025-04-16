@@ -1,1 +1,97 @@
+body {
+  margin: 0;
+}
 
+.athletes {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  justify-content: center;
+  row-gap: 20px;
+  column-gap: 15px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+@media (min-width: 1001px) {
+  .athletes {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.athletes__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 231px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.2);
+
+    .person__extra {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+}
+
+.person__image-container {
+  position: relative;
+  width: 200px;
+  aspect-ratio: 1 / 1;
+}
+
+.person__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.person__rank {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  font-weight: 700;
+  color: #8B0000;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+}
+
+.person__details {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.person__name {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.person__extra {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: #777;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.person__sport {
+  display: block;
+}
+
+.person__pay {
+  display: block;
+}
